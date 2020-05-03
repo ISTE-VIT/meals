@@ -6,7 +6,7 @@ function Search1({term, onTermChange, onSubmit}) {
     return (
     <View style={styles.back}>
     {/* for vector icons-  https://github.com/expo/vector-icons */}
-      <Ionicons size={30} color="white" style={styles.icon} name="ios-search" />
+      <Ionicons size={30} style={styles.icon} name="ios-search" />
       <TextInput style={styles.search} 
           autoCapitalize='none'
           autoCorrect={false}
@@ -21,7 +21,7 @@ function Search1({term, onTermChange, onSubmit}) {
 
 const styles=StyleSheet.create({
     back: {
-        backgroundColor: 'black',
+        // backgroundColor: 'black',
         marginTop: 5,
         borderWidth: 1,
         borderColor: 'gray',
@@ -42,8 +42,7 @@ const styles=StyleSheet.create({
     },
     search: {
         flex: 8,
-        fontSize: 20,
-        color:'white',
+        fontSize: 20
     }
 });
 

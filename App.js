@@ -15,7 +15,7 @@ const RootDrawerNavigator = createDrawerNavigator({
     navigationOptions: {
     headerTitle: () => <Header />}
   },
-  About: {
+  Filter: {
     screen: AboutScreen,
      navigationOptions: {
        headerTitle: () => <Header />
@@ -25,8 +25,10 @@ const RootDrawerNavigator = createDrawerNavigator({
     screen: AboutPass,
     navigationOptions: {
       headerTitle: () => <Header />
+      
     },
   },
+
 });
 
 export default createAppContainer(RootDrawerNavigator);
