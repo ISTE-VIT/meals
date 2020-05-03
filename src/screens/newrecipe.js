@@ -1,14 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, StyleSheet, Image, CheckBox, FlatList, Button, ScrollView} from 'react-native';
+import {Text, View, StyleSheet, Image, CheckBox, FlatList, Button, ScrollView, TouchableOpacity, TouchableHighlight,
+    Alert,
+    Modal,} from 'react-native';
 import MEALS from './components/info';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import {Entypo} from '@expo/vector-icons';
 import Favorites1 from './components/favoriteslist';
+import Item2 from './Ingredients';
 
 var m=-1;
-function Show({navigation}){
-    const id= navigation.getParam('id');
+function NewShow({route, navigation}){
+    const [modalVisible, setModalVisible] = useState(false);
+    const { id } = route.params;
     var i= -1;
     var c=2;
     function Helper(id){
@@ -82,7 +86,42 @@ function Show({navigation}){
             <Text style={{marginTop: 8, fontSize: 25}}> Lactose Free</Text>
             </View>
             <View  style={{width:500,height:400,alignSelf: 'center'}}>
-            <Button title="Recipe" onPress={()=> navigation.navigate('Recipe', {id: m})} />
+            <View 
+            style={styles.centeredView1}
+            >
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Item2 id={id} style={styles.modalText} />
+
+            <TouchableHighlight
+              style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}
+            >
+              <Text style={styles.textStyle}>Close</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+      </Modal>
+
+      <TouchableHighlight
+        style={styles.openButton}
+        onPress={() => {
+          setModalVisible(true);
+        }}
+      >
+        <Text style={styles.textStyle}>Ingredients</Text>
+      </TouchableHighlight>
+    </View>
 </View>
 </ScrollView> 
     </View>
@@ -106,11 +145,57 @@ const styles = StyleSheet.create({
      les:{
         flexDirection: 'row',
 
-     }
+     },
+     centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+      },
+      centeredView1: {
+        flex: 1,
+        // justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+      },
+      modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        height: '60%',
+        width: "90%",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
+      },
+      openButton: {
+        backgroundColor: "#F194FF",
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+        position: 'relative',
+        bottom: 20
+      },
+      textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center",
+      },
+      modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+      }
    });
 
 function Variable(){
     return m;
 };
 
-export default Show;Variable;
+export default NewShow;

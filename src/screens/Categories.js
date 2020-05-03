@@ -4,7 +4,7 @@ import Header from './header';
 import About from './About';
 
 function Categories(){
-    return <View style={{backgroundColor: 'black'}}>
+    return <View>
         {/* <Header /> */}
         <ScrollView >
            <Text style={{marginTop: 30}}></Text>

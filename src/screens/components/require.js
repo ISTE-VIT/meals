@@ -7,7 +7,7 @@ function Item1({navigation}){
     var c=1,i=1;
     const m= navigation.getParam('id');
     // var m={props.id};
-    return <View style={{backgroundColor:'gray'}}>
+    return <View >
             <Text style={{marginLeft: 12, marginTop: 15, fontSize:30, fontWeight: 'bold',alignSelf:'center',textDecorationLine: 'underline'}}>Items Required</Text>
                 
           <FlatList 
@@ -21,7 +21,7 @@ function Item1({navigation}){
                         </View>
                 </View>
             }}/>   
-            <View style={{backgroundColor:'gray',height:1000}}>
+            <View style={{height:1000}}>
         <Text style={{marginLeft: 12, marginTop: 13, fontSize: 30, fontWeight: 'bold', alignSelf: 'center',textDecorationLine: 'underline'}}>Recipe</Text>
         <View style={styles.low}>
              <FlatList 
@@ -43,7 +43,7 @@ function Item1({navigation}){
 const styles=StyleSheet.create({
     low: {
         height:460,
-        backgroundColor:'gray'
+        // backgroundColor:'gray'
     },
 
 })
