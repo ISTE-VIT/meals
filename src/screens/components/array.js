@@ -25,8 +25,8 @@ function Categ({navigation}){
         return list;
     };
     m=Helper(cat);
-    console.log(m);
-    return <View style={{backgroundColor: 'black', height: "100%", justifyContent: 'center'}}>
+    // console.log(m);
+    return <View style={{ height: "100%", justifyContent: 'center'}}>
            <Text style={{marginTop: 30}}></Text>
            <FlatList  
      keyExtractor={friend=> Math.random().toString()}
@@ -40,7 +40,7 @@ function Categ({navigation}){
                 style = {{ width: "98%", height: 170, borderRadius: 10 }}
                 /></View>
         <View style={styles.content}>
-            <Text style={{color:'white',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline'}}>{item.title}</Text>
+            <Text style={{color: 'white',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline'}}>{item.title}</Text>
             </View>
             </TouchableOpacity> 
          </View>

@@ -4,23 +4,17 @@ import Search1 from './components/searchBar';
 import RenderImage from './ui';
 import {Ionicons} from '@expo/vector-icons';
 import {withNavigation} from 'react-navigation';
+import AboutScreen2 from './newHome';
 
 function Search({navigation}) {
     const [term, setTerm]= useState('');
-
     return (
-        <View style={{backgroundColor:'black'}}>
         <View >
-            <View>
-            {/* <Ionicons name="ios-menu" size={45} style={styles.icon} 
-            onPress={() => navigation.openDrawer()} color="white" /> */}
-            </View>
         <Search1 term={term} onTermChange = {newTerm => setTerm(newTerm)} 
             onSubmit={() => console.log("term submitted")}
         />
-        <Text>{term}</Text>
+        {/* <Text>{term}</Text> */}
         <RenderImage />
-        </View>
         </View>
     
     );

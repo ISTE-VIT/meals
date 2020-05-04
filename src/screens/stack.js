@@ -11,32 +11,51 @@ import Categ from './components/array';
 import React from 'react';
 import Container from './stack2';
 import { NavigationContainer } from '@react-navigation/native';
+// import AboutScreen from './AboutScreen';
 
-const AboutStack = createStackNavigator(
-  {
-    Home: Nav,
-    Results: Show,
-    Recipe: Item1,
-    Categories: Categ,
+// const AboutStack = createStackNavigator(
+//   {
+//     Home: Nav,
+//     Results: Show,
+//     Recipe: Item1,
+//     Categories: Categ,
     
     
+//   },
+//   {
+//     initialRouteName: 'Home',
+//     defaultNavigationOptions: {
+//       // title: "Meals",
+//       headerTintColor: 'white',
+//       headerRight: ({navigation}) => <Header />,
+//       headerStyle: {backgroundColor: 'black', borderBottomWidth: 0.5, borderBottomColor: "white", },
+//       headerTitleStyle: {
+//           justifyContent: 'center',
+//           // borderBottomColor: "white",
+//           // borderBottomWidth: 0.5
+//         //   marginLeft: 150
+//       }
+//     }
+//   }
+// );
+
+const AboutStack = createStackNavigator({
+  Home: {
+    screen : Nav,
+    navigationOptions: ({navigation}) => {
+      return { headerTitle: () => <Header navigation={navigation} title="Meals" />
+    }}
   },
-  {
-    initialRouteName: 'Home',
-    defaultNavigationOptions: {
-      // title: "Meals",
-      headerTintColor: 'white',
-      headerRight: ({navigation}) => <Header />,
-      headerStyle: {backgroundColor: 'black', borderBottomWidth: 0.5, borderBottomColor: "white", },
-      headerTitleStyle: {
-          justifyContent: 'center',
-          // borderBottomColor: "white",
-          // borderBottomWidth: 0.5
-        //   marginLeft: 150
-      }
-    }
-  }
-);
+  Results: {
+    screen: Show,
+  },
+  Recipe: {
+    screen: Item1,
+  },
+  Categories: {
+    screen: Categ,
+  },
+});
 
 
 // const Stack= createStackNavigator();
