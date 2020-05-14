@@ -49,11 +49,12 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // marginTop: Constants.statusBarHeight,
-    height: 100
+    height: 100,
+    // top: 40
   },
   scrollView: {
     flex: 1,
-    backgroundColor: 'pink',
+    // backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
     height: 20

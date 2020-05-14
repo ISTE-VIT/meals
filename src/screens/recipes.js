@@ -37,13 +37,8 @@ function Show({navigation}){
     return <View ><Text></Text>
             <View style={{flexDirection: 'row'}}>
             <Image source = {{uri: MEALS[m].imageUrl}}
-                style = {{ flex: 7, height: 260, borderRadius: 10, alignSelf: 'center' }}
+                style = {{width:'84%', height: 260, borderRadius: 10, alignSelf: 'center', marginLeft: '8%' }}
                 />
-            <View style={{flex: 3, flexDirection: 'row', marginLeft: 5, borderColor: 'black', borderWidth: 1, height: 80}}>
-                <Text style={{flex: 2, fontSize: 16}}>Add to favorites</Text>
-                <Entypo name="star-outlined" style={{flex: 1}} onPress={() => List(MEALS[m])} color='black' size={26} />
-                
-                </View>
             </View>
               <ScrollView> 
             <Text style={{textAlign: 'center',textDecorationLine: 'underline', fontSize:30,fontWeight:'bold'}}>{MEALS[m].title}</Text>
