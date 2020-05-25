@@ -10,10 +10,10 @@ function Search({navigation}) {
     const [term, setTerm]= useState('');
     return (
         <View >
-        <Search1 term={term} onTermChange = {newTerm => setTerm(newTerm)} 
+        {/* <Search1 term={term} onTermChange = {newTerm => setTerm(newTerm)} 
             onSubmit={() => console.log("term submitted")}
-        />
-        {/* <Text>{term}</Text> */}
+        /> */}
+         {/* <Text>{term}</Text> */}
         <RenderImage />
         </View>
     

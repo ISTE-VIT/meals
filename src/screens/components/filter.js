@@ -102,7 +102,7 @@ function Filter({val1, val2, val3, val4, navigation}){
 
     const m= List();
     return (
-        <View style={{ height: 600, justifyContent: 'center'}}>
+        <View style={{ height: 700, justifyContent: 'center'}}>
            <Text style={{marginTop: 10}}></Text>
            <FlatList  
      keyExtractor={friend=> Math.random().toString()}
