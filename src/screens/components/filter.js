@@ -102,7 +102,7 @@ function Filter({val1, val2, val3, val4, navigation}){
 
     const m= List();
     return (
-        <View style={{ height: 700, justifyContent: 'center'}}>
+        <View style={{ height:"95%",}}>
            <Text style={{marginTop: 10}}></Text>
            <FlatList  
      keyExtractor={friend=> Math.random().toString()}
@@ -113,10 +113,11 @@ function Filter({val1, val2, val3, val4, navigation}){
       <TouchableOpacity onPress={()=> navigation.navigate('Results', {id: item.id})}>
            <View style={styles.img}>
             <Image source = {{uri:item.imageUrl}}
-                style = {{ width: "98%", height: 170, borderRadius: 10 }}
+                style = {{ width: "99.9%", height: 170, borderRadius: 30 }}
                 /></View>
         <View style={styles.content}>
-            <Text style={{color: 'white',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline'}}>{item.title}</Text>
+            <Text style={{color: 'black',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline',
+            textAlign: 'center', justifyContent: 'center', alignSelf: 'center' }}>{item.title}</Text>
             </View>
             </TouchableOpacity> 
          </View>
@@ -128,15 +129,15 @@ function Filter({val1, val2, val3, val4, navigation}){
 const styles=StyleSheet.create({
     box: {
         width: "40%",
-        borderWidth: 1,
+        borderWidth: 1.5,
         borderColor: 'gray',
         marginBottom: 40,
-        height: 220,
+        height: 222,
         marginLeft: "5%",
-        borderRadius:10,
+        borderRadius:30,
         marginHorizontal:10,
         alignSelf: 'center',
-        backgroundColor: 'black',
+       // backgroundColor: 'white',
         // marginBottom: 20
     },
     content: {
@@ -150,7 +151,7 @@ const styles=StyleSheet.create({
         backgroundColor:'black',
     },
     img: {
-        borderRadius:10,
+        borderRadius:50,
     }
 });
 

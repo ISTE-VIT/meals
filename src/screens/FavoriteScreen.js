@@ -16,10 +16,11 @@ function FavoritesImage({navigation, fav}){
       <TouchableOpacity onPress={()=> navigation.navigate('Results', {id: item.id})}>
            <View style={styles.img}>
             <Image source = {{uri:item.imageUrl}}
-                style = {{ width: "98%", height: 170, borderRadius: 10 }}
+                style = {{ width: "100%", height: 170, borderRadius: 30 }}
                 /></View>
         <View style={styles.content}>
-            <Text style={{color: 'white',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline'}}>{item.title}</Text>
+            <Text style={{fontWeight:'bold',fontSize:15,textDecorationLine: 'underline',
+             textAlign: 'center', justifyContent: 'center', alignSelf: 'center' }}>{item.title}</Text>
             </View>
             </TouchableOpacity> 
         </View>
@@ -31,15 +32,15 @@ function FavoritesImage({navigation, fav}){
 const styles=StyleSheet.create({
     box: {
         width: "40%",
-        borderWidth: 1,
+        borderWidth: 1.5,
         borderColor: 'gray',
         marginBottom: 80,
         height: 220,
         marginLeft: "5%",
-        borderRadius:10,
+        borderRadius:30,
         marginHorizontal:10,
         alignSelf: 'center',
-        backgroundColor:'black',
+       // backgroundColor:'#FF9999',
     },
     content: {
         alignSelf: 'center',
@@ -52,7 +53,7 @@ const styles=StyleSheet.create({
         // backgroundColor:'black',
     },
     img: {
-        borderRadius:10,
+        borderRadius:50,
     }
 });
 export default withNavigation(FavoritesImage);

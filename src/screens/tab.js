@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView,RefreshControl, SafeAreaView, StyleSheet } from 'react-native';
+import { Text, View, ScrollView,RefreshControl, SafeAreaView, StyleSheet, } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Favorites1 from './components/favoriteslist';
 import {Entypo} from '@expo/vector-icons';
 import {FontAwesome} from '@expo/vector-icons';
+import {Ionicons} from '@expo/vector-icons';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import Search from "./first";
 import Categories from './Categories';
 import FavoritesImage from './FavoriteScreen';
-import Constants from 'expo-constants';
-import AboutScreen from './AboutScreen';
 
 function wait(timeout) {
   return new Promise(resolve => {
@@ -29,7 +28,7 @@ function SettingsScreen() {
   }, [refreshing]);
 
   return (
-    <View style={{ flex: 1, marginTop: 10}}>
+    <View style={{ flex: 1,}}>
       <SafeAreaView style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.scrollView}
@@ -37,7 +36,7 @@ function SettingsScreen() {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       >
-        <Text>Pull down to see Refresh</Text>
+        <Text></Text>
       </ScrollView>
     </SafeAreaView>
       <FavoritesImage fav={Favorites1} />
@@ -49,7 +48,7 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // marginTop: Constants.statusBarHeight,
-    height: 100,
+    height: 80,
     // top: 40
   },
   scrollView: {
@@ -64,14 +63,40 @@ const styles = StyleSheet.create({
 const Tab = createBottomTabNavigator();
 
 function Nav() {
+  var a='blue';
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'Home') {
+              iconName = focused
+                ? 'ios-information-circle'
+                : 'ios-information-circle-outline';
+            } else if (route.name === 'Categories') {
+              iconName = focused ? 'ios-list-box' : 'ios-list';
+              return <FontAwesome name="certificate" color='#99FF99' size={26} />
+            }
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={a} />;
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: '#99FF99',
+          inactiveTintColor: '#000000',
+          activeBackgroundColor: '#d11d4c',
+          inactiveBackgroundColor: '#f0eded'
+        }}
+      >
       <Tab.Screen
-        name="Feedu"
+        name="Home"
         component={Search}
         options={{
           tabBarLabel: 'Home',
+          unmountOnBlur: true,
           tabBarIcon: () => (
             <MaterialCommunityIcons name="home" color='black' size={26} />
           ),
