@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "iste-app",
+    "name": "Meals",
     "slug": "iste-app",
     "platforms": [
       "ios",
@@ -22,7 +22,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier":"com.isteProject.MealApp",
+      "buildNumber":"1.0.0"
+
+    },
+    "android":{
+      "package":"com.isteProject.MealApp",
+      "versionCode":1
     }
   }
 }

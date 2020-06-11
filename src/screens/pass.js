@@ -7,10 +7,12 @@ import {
   TouchableHighlight,
   View
 } from "react-native";
+import NewHead from './stack2';
 
 const AboutPass = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  return (
+  return (<View>
+  <NewHead title='About' />
     <View style={styles.centeredView}>
       <Modal
         animationType="slide"
@@ -26,7 +28,7 @@ const AboutPass = () => {
             </Text>
 
             <TouchableHighlight
-              style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+              style={{ ...styles.closeButton, backgroundColor: "#2196F3" }}
               onPress={() => {
                 setModalVisible(!modalVisible);
               }}
@@ -45,7 +47,7 @@ const AboutPass = () => {
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableHighlight>
-    </View>
+    </View></View>
   );
 };
 
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 22
+    // marginTop: 22
   },
   modalView: {
     margin: 20,
@@ -75,12 +77,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#F194FF",
     borderRadius: 20,
     padding: 10,
-    elevation: 2
+    elevation: 2,
+    height: 30,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginTop: 500
+  },
+  closeButton: {
+    backgroundColor: "#F194FF",
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
   },
   textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
+    // color: "white",
+    // fontWeight: "bold",
+    // marginTop: '45%'
   },
   modalText: {
     marginBottom: 15,

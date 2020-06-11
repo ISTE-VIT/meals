@@ -46,7 +46,7 @@ function AboutScreen2({navigation}){
                         style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.2 }], marginHorizontal: 10 }}
                 />
             
-                <Text>     Vegan          </Text>
+                <Text>Vegan         </Text>
                 <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isEnabled2 ? "#f5dd4b" : "#f4f3f4"}
@@ -57,7 +57,7 @@ function AboutScreen2({navigation}){
                 />
             </View>
             <View style={{flexDirection: 'row', marginTop: 10}}>
-                <Text> Vegetarian   </Text>
+                <Text> Vegetarian  </Text>
                 <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isEnabled3 ? "#f5dd4b" : "#f4f3f4"}
@@ -67,7 +67,7 @@ function AboutScreen2({navigation}){
                         style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.2 }], marginHorizontal: 10  }}
                 />
             
-                <Text>    Lactose Free</Text>
+                <Text>Lactose Free</Text>
                 <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isEnabled4 ? "#f5dd4b" : "#f4f3f4"}

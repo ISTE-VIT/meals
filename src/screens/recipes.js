@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, StyleSheet, Image, CheckBox, FlatList, Button, ScrollView} from 'react-native';
+import {Text, View, StyleSheet, Image, CheckBox, TouchableHighlight, Button, ScrollView} from 'react-native';
 import MEALS from './components/info';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import {Entypo} from '@expo/vector-icons';
+import {FontAwesome} from '@expo/vector-icons';
 import Favorites1 from './components/favoriteslist';
 
 var m=-1;
@@ -35,22 +35,24 @@ function Show({navigation}){
     }
     
     return <View ><Text></Text>
-            <View style={{flexDirection: 'row'}}>
             <Image source = {{uri: MEALS[m].imageUrl}}
-                style = {{width:'84%', height: 260, borderRadius: 10, alignSelf: 'center', marginLeft: '8%' }}
+                style = {{width:'84%', height: 260, borderRadius: 10, alignSelf: 'center' }}
                 />
+                <View style={{flexDirection: 'row'}}>
+                <View style={styles.lew,{ marginLeft: '8%', flexDirection: 'row'}}>
+            <FontAwesome name='dollar' size={20} style={{top: 4}} />
+            <Text style={{fontSize:20}}> {MEALS[m].affordability}</Text>
+            </View>
+            <View style={styles.low,{
+                //  right: '-32%',
+                position: 'absolute',
+                right: '8.5%',
+                  flexDirection: 'row', justifyContent: 'center', alignSelf:'center'}}>
+                <Ionicons name='ios-timer' size={20} style={{top: 4}} />
+            <Text style={{fontSize:20}}> {MEALS[m].duration} minutes</Text>
+            </View>
             </View>
               <ScrollView> 
-            <Text style={{textAlign: 'center',textDecorationLine: 'underline', fontSize:30,fontWeight:'bold'}}>{MEALS[m].title}</Text>
-            <View style={styles.lew}>
-            <Image style={{width:30,height:30,left:'2%'}} source={require('./coins.png')}/>
-            <Text style={{fontSize:25}}> {MEALS[m].affordability}</Text>
-            </View>
-            <View style={styles.low}>
-                <Ionicons name='ios-timer' size={40} />
-                {/* <Image style={{width:30,height:30,left:'2%'}} source={require('./clock.png')}/> */}
-            <Text style={{fontSize:25}}> {MEALS[m].duration} minutes</Text>
-            </View>
             <View style={styles.lew}>
                 <Text style={{fontSize:25}}>Complexity  </Text>
             <AntDesign name='arrowright' size={40} />
@@ -77,7 +79,15 @@ function Show({navigation}){
             <Text style={{marginTop: 8, fontSize: 25}}> Lactose Free</Text>
             </View>
             <View  style={{width:500,height:400,alignSelf: 'center'}}>
-            <Button title="Recipe" onPress={()=> navigation.navigate('Recipe', {id: m})} />
+            <TouchableHighlight
+                style={styles.openButton}
+                onPress={() => navigation.navigate('Recipe', {id: m})}
+            >
+                <View style={{flexDirection:'row', marginLeft: '30%'}}>
+                <Text style={styles.textStyle}>Recipe</Text>
+                <AntDesign name='arrowright' size={30} color='white' />
+                </View>
+            </TouchableHighlight>
 </View>
 </ScrollView> 
     </View>
@@ -93,6 +103,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginVertical:10
      },
+     textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center",
+        alignSelf: 'center',
+        justifyContent: 'space-evenly',
+        fontSize: 22,
+        marginRight: 8
+      },
      lew:{
         flexDirection: 'row',
         marginVertical:10
@@ -101,7 +120,15 @@ const styles = StyleSheet.create({
      les:{
         flexDirection: 'row',
 
-     }
+     },
+     openButton: {
+        backgroundColor: "green",
+        width: '50%',
+        marginLeft: '25%',
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2
+      },
    });
 
 function Variable(){
