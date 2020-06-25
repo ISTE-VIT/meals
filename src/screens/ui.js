@@ -65,9 +65,9 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderColor: 'gray',
       marginBottom: 80,
-      height: 220,
+      height: 222,
       marginLeft: "5%",
-      borderRadius:10,
+      borderRadius:15,
       marginHorizontal:10,
       alignSelf: 'center',
       //backgroundColor:'#e6155a',
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
       //backgroundColor:'black',
   },
   img: {
-      borderRadius:30,
+      //borderRadius:30,
   }
   });
 

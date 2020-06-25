@@ -113,13 +113,17 @@ function Filter({val1, val2, val3, val4, navigation}){
       <TouchableOpacity onPress={()=> navigation.navigate('Results', {id: item.id})}>
            <View style={styles.img}>
             <Image source = {{uri:item.imageUrl}}
-                style = {{ width: "99.9%", height: 170, borderRadius: 30 }}
+                style = {{ width: "99.9%", height: 162, borderRadius: 15 }}
                 /></View>
         <View style={styles.content}>
             <Text style={{color: 'black',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline',
             textAlign: 'center', justifyContent: 'center', alignSelf: 'center' }}>{item.title}</Text>
+          
+            
+            
             </View>
             </TouchableOpacity> 
+        
          </View>
      }}/> 
         </View>
@@ -134,7 +138,7 @@ const styles=StyleSheet.create({
         marginBottom: 40,
         height: 222,
         marginLeft: "5%",
-        borderRadius:30,
+        borderRadius:15,
         marginHorizontal:10,
         alignSelf: 'center',
        // backgroundColor: 'white',
@@ -151,7 +155,7 @@ const styles=StyleSheet.create({
         backgroundColor:'black',
     },
     img: {
-        borderRadius:50,
+        
     }
 });
 

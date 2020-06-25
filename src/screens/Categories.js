@@ -4,9 +4,10 @@ import Header from './header';
 import About from './About';
 
 function Categories(){
-    return <View>
+    return <View style={{alignSelf:"center",left:"-3%"}}>
         {/* <Header /> */}
-        <ScrollView >
+        <ScrollView showsVerticalScrollIndicator={false} >
+
            <Text style={{marginTop: 30}}></Text>
            <View style={{flexDirection: 'row', marginBottom: 15}} >
              <About backgroundColor1='#00FFFF' id1='c1' name1='Italian' id='c1' />
