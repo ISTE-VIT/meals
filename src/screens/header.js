@@ -6,19 +6,20 @@ import {withNavigation} from 'react-navigation';
 function Header({navigation, title}) {
     // const screenWidth = Math.round(useWindowDimensions().width);
     return (
-        <View style={{flexDirection: 'row',backgroundColor:"#d11d4c",marginHorizontal:-20, width: 768}}>
+        <View style={{flexDirection: 'row',backgroundColor:"#d11d4c", width: 768}}>
             <Ionicons name="ios-menu" size={50} style={styles.icon} 
-            onPress={() => navigation.openDrawer()} color="black" />
-            <Text style={{fontSize: 30, backgroundColor:"#d11d4c", marginLeft: '13%',}}>{title}</Text>
+            onPress={() => navigation.openDrawer()} color="white" />
+            <Text style={{fontSize: 30, backgroundColor:"#d11d4c", marginLeft: '13%',color:"white",fontWeight:"bold"}}>{title}  </Text>
         </View>
     )
 };
 
 const styles=StyleSheet.create({
     icon: {
-        marginLeft: '2%',
+        marginLeft: '-1%',
         // position: 'absolute',
         left:8,
+        color:"white"
         // top: 25,
     }
 });

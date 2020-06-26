@@ -29,13 +29,13 @@ function ReHeader({navigation, title}) {
     speed={15}
     >
         <View style={{flexDirection: 'row'}}>
-            <Text style={{fontSize: 20, alignItems: 'center', justifyContent: 'center'}}>{MEALS[m].title}</Text>
+            <Text style={{fontSize: 20, alignItems: 'center', justifyContent: 'center',flexDirection:'row',color:'white'}}>{MEALS[m].title}</Text>
         </View></HSNZ></View>
     )
 };
 
 const styles=StyleSheet.create({
-    icon: {
+    icon: {color:'white',
         // position: 'absolute',
         left: 8,
         // top: 25,
@@ -43,7 +43,7 @@ const styles=StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        fontSize:20,height:150,width:330,fontWeight:"bold"
+        fontSize:20,height:150,width:290,fontWeight:"bold",marginLeft:-15
       },
 });
 

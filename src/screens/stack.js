@@ -13,6 +13,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import {Entypo} from '@expo/vector-icons';
 import Favorites1 from './components/favoriteslist';
 
+
 var m=-1;
 function Find({navigation, title}){
   const id= navigation.getParam('id');
@@ -54,7 +55,7 @@ function Find({navigation, title}){
 
 
   return <View style={{flexDirection: 'row', }}>
-          <Entypo name="star-outlined" style={{left: -1}} onPress={() => List(MEALS[m])} color='black' size={26} />
+          <Entypo name="star-outlined" style={{left: -1}} onPress={() => List(MEALS[m])} color='white' size={26} />
   </View>
 }
 
@@ -79,7 +80,9 @@ const AboutStack = createStackNavigator({
     screen: Item1,
   },
   Categories: {
-    screen: Categ,
+    screen: Categ, 
+ 
+    
   },
   },
   {
@@ -88,9 +91,9 @@ const AboutStack = createStackNavigator({
       headerStyle: {
         backgroundColor: '#d11d4c',
       },
-      headerTintColor: 'black',
+      headerTintColor: 'white',
       headerTitleStyle: {
-        // fontWeight: 'bold',
+        fontWeight: 'bold',
         fontSize: 22,
       },
     },
